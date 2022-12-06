@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import { Heading,Flex, Input,Button} from '@chakra-ui/react'
-
 
 export default function Home() {
   return (
