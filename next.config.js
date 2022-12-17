@@ -3,4 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+  env:{
+    servidor: 'http://localhost:3001/api'
+  }
+
+}
