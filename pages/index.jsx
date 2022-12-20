@@ -44,7 +44,13 @@ const Home = ({data})=>{
       const response = await login(user.correo)
       if (response.status === 200) {
 				Cookie.set("token", response.data.token, { expires: 1 })
-				router.push("./user/home")
+        console.log(response.data.user)
+        const rol = response.data.user.rol
+        if (rol=='vecino') {
+          router.push("./user/home")
+        }else{
+          router.push("./admin/home")
+        }
 			}
     } catch (error) {
       console.log(error)
