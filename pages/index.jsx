@@ -12,7 +12,7 @@ export const getServerSideProps = async(context) =>{
 		if (response.status === 200) {
 			return {
 				redirect: {
-					destination: "./user/home",
+					destination: `/`,
 					permanent: false
 				}
 			}
@@ -25,7 +25,7 @@ export const getServerSideProps = async(context) =>{
 	}
 }
 
-const Home = ({data})=>{
+const Home = ()=>{
   
   const [user,setUser] = useState({
     correo:""
@@ -44,10 +44,11 @@ const Home = ({data})=>{
       const response = await login(user.correo)
       if (response.status === 200) {
 				Cookie.set("token", response.data.token, { expires: 1 })
-        console.log(response.data.user)
         const rol = response.data.user.rol
+        const id = response.data.user._id
+        console.log(id)
         if (rol=='vecino') {
-          router.push("./user/home")
+          router.push(`./gastos/${id}`)
         }else{
           router.push("./admin/home")
         }
