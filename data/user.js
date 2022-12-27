@@ -16,11 +16,16 @@ const checkToken = async (token) => {
     const response = await axios.get(`${process.env.servidor}/checkToken`, { headers: { cookie: token } });
     return response
 }
+const getUsers = async () => {
+    const response = await axios.get(`${process.env.servidor}/users`)
+    return response
+}
 
 
 
 module.exports = {
     login,
     logout,
-    checkToken
+    checkToken,
+    getUsers
 }
