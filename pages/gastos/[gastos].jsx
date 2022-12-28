@@ -1,14 +1,15 @@
 import {Container, Text, Button, Heading,Table, Td,Thead,Tbody ,Tr, Flex} from '@chakra-ui/react'
 import { useState } from 'react'
 import { useRouter } from "next/router"
-import {getGastos, getGasto} from "../../data/gastos"
+import {getGastosVecino} from "../../data/gastos"
+import {getUser} from "../../data/user"
 import Cookies from 'js-cookie'
 import axios from "axios"
 
 export async function getServerSideProps(context) {
     try {
-        const response = await getGastos(context.query.gastos, context.req.headers.cookie)
-        const response2 = await getGasto(context.query.gastos, context.req.headers.cookie)
+        const response = await getGastosVecino(context.query.gastos, context.req.headers.cookie)
+        const response2 = await getUser(context.query.gastos, context.req.headers.cookie)
         console.log("fdsadsf1")
         console.log(response2.data)
         console.log("fdsadsf2")

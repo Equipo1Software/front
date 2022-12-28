@@ -1,18 +1,20 @@
 import axios from 'axios';
 
-const getGastos = async (id, email) => {
+const getGastosVecino = async (id, email) => {
     const response = await axios.get(`${process.env.servidor}/gastos/${id}`, { headers: { cookie: email } });
     return response
 }
 
-const getGasto = async (id, email) =>{
-    const response = await axios.get(`${process.env.servidor}/user/${id}`,{ headers: { cookie: email } })
+const getGastos = async () => {
+    const response = await axios.get(`${process.env.servidor}/gastos`)
     return response
 }
 
 
 
+
+
 module.exports = {
-    getGastos,
-    getGasto
+    getGastosVecino,
+    getGastos
 }

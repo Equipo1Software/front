@@ -21,11 +21,16 @@ const getUsers = async () => {
     return response
 }
 
+const getUser = async (id, email) =>{
+    const response = await axios.get(`${process.env.servidor}/user/${id}`,{ headers: { cookie: email } })
+    return response
+}
 
 
 module.exports = {
     login,
     logout,
     checkToken,
-    getUsers
+    getUsers,
+    getUser
 }
