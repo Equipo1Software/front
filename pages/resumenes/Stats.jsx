@@ -9,18 +9,33 @@ const Stats = () =>{
     const data = {
         labels: ['Gas','Luz','Agua','Espacios comunes','Seguridad'],
         datasets:[{
-            label:'Consumo',
-            backgroundColor:'rgba(0,255,0,1)',
-            borderColor:'black',
-            borderWidth:1,
-            hoverBackgroundColor:'#0070f3',
-            hoverBorderColor:'black',
+            label:'Consumo $',
+            backgroundColor:[
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+                ],
+            borderColor:[
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(75, 192, 192)',
+                'rgb(255, 205, 86)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth:3,
             data: [25000,32400,18500,41900,37000]
         }]
       };
       const opciones = {
         maintainAspectRadio: false,
-        responsive: true
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+                }
+        }
       }
 
 
@@ -29,7 +44,7 @@ const Stats = () =>{
 
     return (
         <div className='Stats'>
-            <Box textAlign='center' width='100%' height='500px' >
+            <Box textAlign='center' display='auto' >
                 <Heading as='b' mb={4}>
                     Estidísticas usuario
                 </Heading>
