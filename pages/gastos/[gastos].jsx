@@ -1,4 +1,4 @@
-import {Container, Text, Button, Heading,Table, Td,Thead,Tbody ,Tr, Flex} from '@chakra-ui/react'
+import {TableContainer, Text, Button, Heading,Table, Td,Thead,Tbody ,Tr, Flex,Th} from '@chakra-ui/react'
 import { useState } from 'react'
 import { useRouter } from "next/router"
 import {getGastosVecino} from "../../data/gastos"
@@ -62,18 +62,18 @@ const gastos = ({data,data2})=>{
     
     return (
         
-            <Container display={'flex'} flexDirection={'column'} my={'60px'}>
+            <TableContainer display={'flex'} flexDirection={'column'} my={'60px'}>
             <Heading width={'620px'} fontSize='xl'>Bienvenid@ {user.nombre} su lista de gastos comunes es:</Heading>
             <Table my={10} variant='simple' colorScheme='teal' backgroundColor={'#BAD1C2'}>
                 <Thead>
                     <Tr>
-                        <Td>Estado de Deuda</Td>
-                        <Td>Agua</Td>
-                        <Td>Luz</Td>
-                        <Td>Gas</Td>
-                        <Td>Mantenimiento</Td>
-                        <Td>Sueldo del Personal</Td>
-                        <Td>Fecha</Td>
+                        <Th>Estado de Deuda</Th>
+                        <Th>Agua</Th>
+                        <Th>Luz</Th>
+                        <Th>Gas</Th>
+                        <Th>Mantenimiento</Th>
+                        <Th>Sueldo del Personal</Th>
+                        <Th>Fecha</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -81,8 +81,8 @@ const gastos = ({data,data2})=>{
                 </Tbody>
             </Table>
             
-            <Button my={10} backgroundColor={"#153462"} color={"#F6F6C9"} onClick={cerrar}>Cerrar session</Button>
-        </Container>
+            <Button my={10} backgroundColor={"#153462"} color={"#F6F6C9"} onClick={cerrar}>Cerrar sesión</Button>
+        </TableContainer>
     
         
     )

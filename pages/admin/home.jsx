@@ -61,27 +61,27 @@ const gastos = ({data})=>{
 
     return (
         <Container margin={'0'} p={'0'} maxW={'full'} display={'flex'}>
-                <VStack width={'60'} bg={'#3C4048'} >
+                <VStack width={'60'} bg={'#111B54'} >
                     <Divider orientation='horizontal' my={'2'}/>
                         <Avatar size={'xl'}>
                             <AvatarBadge boxSize='1.25em' bg='green.500' />
                         </Avatar>
-                        <Heading size={'md'} color ={'#EAEAEA'}>Administrador</Heading>
+                        <Heading size={'md'} color ={'#ffffff'}>Administrador</Heading>
                     
                     <Divider orientation='horizontal' my={'6'}/>
                     <Divider orientation='horizontal' my={'6'}/>
                     <nav>
                         <ul type='disc'>
-                            <li><Link color = {'#EAEAEA'}>Home</Link></li>
-                            <li ><Link color = {'#EAEAEA'} >Vecinos</Link></li>
-                            <li ><Link color = {'#EAEAEA'} >Gastos</Link></li>
-                            <li><Link color = {'#EAEAEA'} >Configurar</Link></li>
-                            <li><Link color = {'#EAEAEA'} >Perfil Admin</Link></li>
+                            <li><Link color = {'#ffffff'}>Home</Link></li>
+                            <li ><Link color = {'#ffffff'} >Vecinos</Link></li>
+                            <li ><Link color = {'#ffffff'} >Gastos</Link></li>
+                            <li><Link color = {'#ffffff'} >Configurar</Link></li>
+                            <li><Link color = {'#ffffff'} >Perfil Admin</Link></li>
                         </ul>
                     </nav>
                 </VStack>
                 <VStack bg={"gray.200"} width={'full'} height={'container.lg'}>
-                    <Button onClick={cerrar}>Cerrar session</Button>
+                    <Button onClick={cerrar} bg={'#111B54'} color ={'#ffffff'} >Cerrar sesión</Button>
                     <Heading fontSize='2xl'>Hola Admin como te va</Heading>
                     <Divider orientation='horizontal' my={'10px'} color={'#3C4048'}/>
                     <Divider orientation='horizontal' my={'10px'} color={'#3C4048'}/>
