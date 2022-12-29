@@ -1,4 +1,4 @@
-import {Container,Button, Heading, Text, Box, Stack, Flex, VStack,Avatar, AvatarBadge, AvatarGroup, Divider, Link, HStack,Card, CardHeader, CardBody, CardFooter, SimpleGrid} from '@chakra-ui/react'
+import {Container,Button, Heading, Text, Flex, VStack,Avatar, AvatarBadge, AvatarGroup, Divider, Link, HStack,Card, CardHeader, CardBody, CardFooter} from '@chakra-ui/react'
 import { useState } from 'react'
 import { useRouter } from "next/router"
 import { getGastos } from "../../data/gastos"
@@ -20,9 +20,6 @@ export async function getServerSideProps(context) {
 		}
     }
 }
-
-
-
 
 const gastos = ({data})=>{
     const router = useRouter()
@@ -54,10 +51,7 @@ const gastos = ({data})=>{
             if(gasto.estado==='vencido') cont++
         });
         return cont
-    }
-
-
-    
+    } 
 
     return (
         <Container margin={'0'} p={'0'} maxW={'full'} display={'flex'}>
@@ -72,7 +66,7 @@ const gastos = ({data})=>{
                     <Divider orientation='horizontal' my={'6'}/>
                     <nav>
                         <ul type='disc'>
-                            <li><Link color = {'#EAEAEA'}>Home</Link></li>
+                            <li><Link color = {'#EAEAEA'} href='./home'>Home</Link></li>
                             <li ><Link color = {'#EAEAEA'} >Vecinos</Link></li>
                             <li ><Link color = {'#EAEAEA'} >Gastos</Link></li>
                             <li><Link color = {'#EAEAEA'} >Configurar</Link></li>
@@ -92,7 +86,7 @@ const gastos = ({data})=>{
                             <Heading size='md' color={'green.500'}>Pagado</Heading>
                             </CardHeader>
                             <CardBody>
-                                <Text>{totalPagado()} vecinos en este estado.</Text>
+                                <Text>{totalPagado()} gastos en este estado.</Text>
                             </CardBody>
                             <CardFooter>
                                 <Button bg={'green.500'} >Ver..</Button>
@@ -114,7 +108,7 @@ const gastos = ({data})=>{
                                 <Heading size='md'color={'red.500'} > Cuenta vencida</Heading>
                             </CardHeader>
                             <CardBody>
-                                <Text>{totalVencido()} vecinos en este estado.</Text>
+                                <Text>{totalVencido()} gastos en este estado.</Text>
                             </CardBody>
                             <CardFooter>
                                 <Button bg={'red.500'}>Ver..</Button>
