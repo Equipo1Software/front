@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useRouter } from "next/router"
 import {getGastosVecino} from "../../data/gastos"
 import {getUser} from "../../data/user"
+import Sidebar from '../components/Sidebar'
+import Navbar from '../components/Navbar'
 import Cookies from 'js-cookie'
 import axios from "axios"
 
@@ -63,6 +65,9 @@ const gastos = ({data,data2})=>{
     return (
         
             <TableContainer display={'flex'} flexDirection={'column'} my={'60px'}>
+                
+                <Navbar/>
+                <Sidebar/>
             <Heading width={'620px'} fontSize='xl'>Bienvenid@ {user.nombre} su lista de gastos comunes es:</Heading>
             <Table my={10} variant='simple' colorScheme='teal' backgroundColor={'#BAD1C2'}>
                 <Thead>
