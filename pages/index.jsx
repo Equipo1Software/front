@@ -50,7 +50,7 @@ const Home = ()=>{
         if (rol=='vecino') {
           router.push(`./gastos/${id}`)
         }else{
-          router.push(`./admin/home`)
+          router.push(`./admin/home/home`)
         }
 			}
     } catch (error) {

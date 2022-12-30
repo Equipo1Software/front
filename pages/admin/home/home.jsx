@@ -1,9 +1,10 @@
-import {Container,Button, Heading, Text, Flex, VStack,Avatar, AvatarBadge, AvatarGroup, Divider, Link, HStack,Card, CardHeader, CardBody, CardFooter} from '@chakra-ui/react'
+import {Container,Button, Heading, Text, Flex, VStack,Avatar, AvatarBadge, Divider, Link, HStack,Card, CardHeader, CardBody, CardFooter} from '@chakra-ui/react'
 import { useState } from 'react'
 import { useRouter } from "next/router"
-import { getGastos } from "../../data/gastos"
+import { getGastos } from "../../../data/gastos"
 import Cookies from 'js-cookie'
 import axios from "axios"
+import Swal from "sweetalert2"
 
 export async function getServerSideProps(context) {
     try {
@@ -20,17 +21,14 @@ export async function getServerSideProps(context) {
 		}
     }
 }
-
 const gastos = ({data})=>{
     const router = useRouter()
     const [gastos] = useState(data)
-
     const cerrar = async () => {
         await axios.get(`${process.env.servidor}/logout`)
         Cookies.remove("token")
         router.push("/")
     }
-
     const totalPorPagar = () => {
         let cont=0;
         gastos.forEach(gasto => {
@@ -51,7 +49,44 @@ const gastos = ({data})=>{
             if(gasto.estado==='vencido') cont++
         });
         return cont
+    }
+    const verPagados = ()=>{
+        try {
+            router.push("./verMasPagado")
+        } catch (error) {
+            console.log(error)
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Algo salio mal!"
+			})
+        }
+    }
+    const verPorPagar = ()=>{
+        try {
+            router.push("./verMasPorPagar")
+        } catch (error) {
+            console.log(error)
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Algo salio mal!"
+			})
+        }
     } 
+
+    const verVencida = ()=>{
+        try {
+            router.push("./verMasVencida")
+        } catch (error) {
+            console.log(error)
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Algo salio mal!"
+			})
+        }
+    }
 
     return (
         <Container margin={'0'} p={'0'} maxW={'full'} display={'flex'}>
@@ -74,7 +109,7 @@ const gastos = ({data})=>{
                         </ul>
                     </nav>
                 </VStack>
-                <VStack bg={"gray.200"} width={'full'} height={'container.lg'}>
+                <VStack bg={"gray.300"} width={'full'} height={'container.lg'}>
                     <Button onClick={cerrar}>Cerrar session</Button>
                     <Heading fontSize='2xl'>Hola Admin como te va</Heading>
                     <Divider orientation='horizontal' my={'10px'} color={'#3C4048'}/>
@@ -89,7 +124,7 @@ const gastos = ({data})=>{
                                 <Text>{totalPagado()} gastos en este estado.</Text>
                             </CardBody>
                             <CardFooter>
-                                <Button bg={'green.500'} >Ver..</Button>
+                                <Button bg={'green.500'} onClick={verPagados}>Ver..</Button>
                             </CardFooter>
                         </Card>
                         <Card boxSize={'xs'} bg={'#EAEAEA'} mx={'5'} height={'max-content'} >
@@ -100,7 +135,7 @@ const gastos = ({data})=>{
                                 <Text>{totalPorPagar()} gastos en este estado.</Text>
                             </CardBody>
                             <CardFooter>
-                                <Button bg={'yellow.500'} >Ver..</Button>
+                                <Button bg={'yellow.500'} onClick={verPorPagar} >Ver..</Button>
                             </CardFooter>
                         </Card>
                         <Card boxSize={'xs'} bg={'#EAEAEA'} mx={'5'} height={'max-content'} >
@@ -111,7 +146,7 @@ const gastos = ({data})=>{
                                 <Text>{totalVencido()} gastos en este estado.</Text>
                             </CardBody>
                             <CardFooter>
-                                <Button bg={'red.500'}>Ver..</Button>
+                                <Button bg={'red.500'} onClick={verVencida}>Ver..</Button>
                             </CardFooter>
                         </Card>
                     </Flex>
