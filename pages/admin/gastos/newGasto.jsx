@@ -3,9 +3,7 @@ import { useState } from 'react'
 import { useRouter } from "next/router"
 import {getAdmin, getUsers} from "../../../data/user"
 import {newGasto,getGastos} from "../../../data/gastos"
-import Cookies from 'js-cookie'
-import axios from "axios"
-import Swal from "sweetalert2"
+import {email} from "../../../data/email"
 
 export async function getServerSideProps(context) {
     
@@ -47,31 +45,54 @@ const agregarGasto = ({data,data2})=>{
         vecino:''
     })
 
+    const datosCorreo={
+        correos:[''],
+        asunto:'',
+        texto:''
+    }
+
     const getIdUser = (name)=>{
         users.forEach(user => {
             if(user.nombre===name){
-            
                 values.vecino=user._id
             }
         });
     }
+    const getEmailUser = (id)=>{
+        
+        users.forEach(user => {
+            if(user._id===id){
+                console.log(user.email)
+                datosCorreo.correos=[user.email]
+                datosCorreo.asunto='Emision de Boleta'
+                datosCorreo.texto=
+                console.log(datosCorreo)
+            }
+        });
+    }
     
-
     const onSubmit = async(e)=>{
         e.preventDefault()
         getIdUser(values.vecino)
         console.log(values)
+        getEmailUser(values.vecino)
+        
+        
+        
         const response = await newGasto(id_admin,values)
         console.log(response)
+        if (response.status === 201) {   
+            const response2 = await email(datosCorreo)
+            console.log(response2)
+        }
+        
     }
     const onChange = (e)=>{
         setvalues({
             ...values,
             [e.target.name]:e.target.value
-        })
-        
+        })      
     }
-
     const showUser = ()=>{
         return users.map(user => {
             return (
@@ -82,6 +103,7 @@ const agregarGasto = ({data,data2})=>{
     const volver = ()=>{
         router.push("./gastos")
     }
+
   return (
     <Container margin={'0'} p={'0'} maxW={'full'} display={'flex'} >
                 <VStack width={'60'} bg={'#3C4048'} >
