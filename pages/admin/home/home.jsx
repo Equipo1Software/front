@@ -11,7 +11,7 @@ export async function getServerSideProps(context) {
         const response = await getGastos()
         return {
             props: {
-                data: response.data,
+                data: response.data
             }
         }
     } catch (err) {
@@ -103,7 +103,7 @@ const gastos = ({data})=>{
                         <ul type='disc'>
                             <li><Link color = {'#EAEAEA'} href='./home'>Home</Link></li>
                             <li ><Link color = {'#EAEAEA'} >Vecinos</Link></li>
-                            <li ><Link color = {'#EAEAEA'} >Gastos</Link></li>
+                            <li ><Link color = {'#EAEAEA'} href='../gastos/gastos'>Gastos</Link></li>
                             <li><Link color = {'#EAEAEA'} >Configurar</Link></li>
                             <li><Link color = {'#EAEAEA'} >Perfil Admin</Link></li>
                         </ul>

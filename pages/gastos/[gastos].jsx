@@ -29,10 +29,6 @@ export async function getServerSideProps(context) {
 
 
 
-
-
-
-
 const gastos = ({data,data2})=>{
     const router = useRouter()
     const [gastos] = useState(data)

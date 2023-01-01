@@ -25,6 +25,10 @@ const getUser = async (id, email) =>{
     const response = await axios.get(`${process.env.servidor}/user/${id}`,{ headers: { cookie: email } })
     return response
 }
+const getAdmin = async() =>{
+    const response = await axios.get(`${process.env.servidor}/admin`)
+    return response
+}
 
 
 module.exports = {
@@ -32,5 +36,6 @@ module.exports = {
     logout,
     checkToken,
     getUsers,
-    getUser
+    getUser,
+    getAdmin
 }
