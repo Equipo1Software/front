@@ -27,7 +27,7 @@ const gastos = ({data})=>{
     const cerrar = async () => {
         await axios.get(`${process.env.servidor}/logout`)
         Cookies.remove("token")
-        router.push("/")
+        router.push("../../index")
     }
     const totalPorPagar = () => {
         let cont=0;

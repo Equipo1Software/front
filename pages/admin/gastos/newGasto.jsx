@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import {getAdmin, getUsers} from "../../../data/user"
 import {newGasto,getGastos} from "../../../data/gastos"
 import {email} from "../../../data/email"
+import Swal from "sweetalert2"
 
 export async function getServerSideProps(context) {
     
@@ -58,6 +59,15 @@ const agregarGasto = ({data,data2})=>{
             }
         });
     }
+    const cambiarFormatoFecha = (fecha)=>{
+        let nuevaFechaE = new Date(fecha)
+        let day = nuevaFechaE.getDate()
+        if(day<10) {day = '0'+day} 
+        let mes = nuevaFechaE.getMonth()+1
+        if(mes<10) {mes = '0'+mes} 
+        let year = nuevaFechaE.getFullYear()
+        return day+'/'+mes+'/'+year
+    }
     const getEmailUser = (id)=>{
         
         users.forEach(user => {
@@ -65,7 +75,7 @@ const agregarGasto = ({data,data2})=>{
                 console.log(user.email)
                 datosCorreo.correos=[user.email]
                 datosCorreo.asunto='Emision de Boleta'
-                datosCorreo.texto=
+                datosCorreo.texto=`Estimad@ ${user.nombre} se le informa la emision de su boleta con fecha limite de pago : ${cambiarFormatoFecha(values.fechaLimite)}`
                 console.log(datosCorreo)
             }
         });
@@ -84,6 +94,18 @@ const agregarGasto = ({data,data2})=>{
         if (response.status === 201) {   
             const response2 = await email(datosCorreo)
             console.log(response2)
+            return Swal.fire({
+				icon: "success",
+				title: "success",
+				text: "se agrego el gasto exitosamente"
+			})
+        }
+        else{
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Algo salio mal!"
+			})
         }
         
     }

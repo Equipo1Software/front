@@ -42,7 +42,21 @@ const gastos = ({data,data2})=>{
 
     const showGastos = () => {
         return gastos.map(gasto => {
-            return (
+                let nuevaFechaE = new Date(gasto.fechaEmision)
+                let day = nuevaFechaE.getDate()
+                let mes = nuevaFechaE.getMonth()+1
+                let year = nuevaFechaE.getFullYear()
+                let fechaE = day+'/'+mes+'/'+year
+                console.log(fechaE)
+
+                let nuevaFechaL = new Date(gasto.fechaLimite)
+                let dayL = nuevaFechaL.getDate()
+                let mesL = nuevaFechaL.getMonth()+1
+                let yearL = nuevaFechaL.getFullYear()
+                let fechaL = dayL+'/'+mesL+'/'+yearL
+                console.log(fechaL)
+
+                return (
                 <Tr key={gasto._id}>
                     <Td>{gasto.estado}</Td>
                     <Td>{gasto.agua}</Td>
@@ -50,7 +64,9 @@ const gastos = ({data,data2})=>{
                     <Td>{gasto.gas}</Td>
                     <Td>{gasto.mantenimiento}</Td>
                     <Td>{gasto.sueldo}</Td>
-                    <Td>{gasto.fecha}</Td>
+                    <Td>{fechaE}</Td>
+                    <Td>{fechaL}</Td>
+                    
                 </Tr>
             )
         })
@@ -69,7 +85,8 @@ const gastos = ({data,data2})=>{
                         <Td>Gas</Td>
                         <Td>Mantenimiento</Td>
                         <Td>Sueldo del Personal</Td>
-                        <Td>Fecha</Td>
+                        <Td>Fecha Emision</Td>
+                        <Td>Fecha Limite</Td>
                     </Tr>
                 </Thead>
                 <Tbody>
