@@ -6,7 +6,7 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   env:{
-    servidor: 'http://localhost:3001/api'
+    servidor: 'http://146.83.198.35:1215/api'
   }
 
 }

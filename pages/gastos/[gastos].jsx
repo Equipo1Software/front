@@ -10,9 +10,7 @@ export async function getServerSideProps(context) {
     try {
         const response = await getGastosVecino(context.query.gastos, context.req.headers.cookie)
         const response2 = await getUser(context.query.gastos, context.req.headers.cookie)
-        console.log("fdsadsf1")
         console.log(response2.data)
-        console.log("fdsadsf2")
         return {
             props: {
                 data: response.data,

@@ -61,18 +61,16 @@ const agregarGasto = ({data,data2})=>{
     }
     const cambiarFormatoFecha = (fecha)=>{
         let nuevaFechaE = new Date(fecha)
-        let day = nuevaFechaE.getDate()
+        let day = nuevaFechaE.getDate()+1
         if(day<10) {day = '0'+day} 
         let mes = nuevaFechaE.getMonth()+1
         if(mes<10) {mes = '0'+mes} 
         let year = nuevaFechaE.getFullYear()
         return day+'/'+mes+'/'+year
     }
-    const getEmailUser = (id)=>{
-        
+    const getEmailUser = (id)=>{  
         users.forEach(user => {
             if(user._id===id){
-                console.log(user.email)
                 datosCorreo.correos=[user.email]
                 datosCorreo.asunto='Emision de Boleta'
                 datosCorreo.texto=`Estimad@ ${user.nombre} se le informa la emision de su boleta con fecha limite de pago : ${cambiarFormatoFecha(values.fechaLimite)}`
@@ -81,13 +79,41 @@ const agregarGasto = ({data,data2})=>{
         });
     }
     
+    const validarFecha = (fechaE, fechaL)=>{
+
+        let nuevaFechaE = new Date(fechaE) //fecha Emision
+        let dayE = nuevaFechaE.getDate()
+        let mesE = nuevaFechaE.getMonth()+1
+        let yearE = nuevaFechaE.getFullYear()
+
+        let nuevaFechaL = new Date(fechaL) //fecha Limite
+        let dayL = nuevaFechaL.getDate()
+        let mesL = nuevaFechaL.getMonth()+1
+        let yearL = nuevaFechaL.getFullYear()
+
+        
+        if(mesE != mesL){
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Las fechas deben estar dentro del mismo mes"
+			})
+        }
+        if(dayL <= dayE){
+            return Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "La fecha limite debe ser superior a la fecha de emision"
+			})
+        }
+        
+    }
+
     const onSubmit = async(e)=>{
         e.preventDefault()
         getIdUser(values.vecino)
-        console.log(values)
         getEmailUser(values.vecino)
-        
-        
+        //validarFecha(values.fechaEmision,values.fechaLimite)
         
         const response = await newGasto(id_admin,values)
         console.log(response)
@@ -97,7 +123,7 @@ const agregarGasto = ({data,data2})=>{
             return Swal.fire({
 				icon: "success",
 				title: "success",
-				text: "se agrego el gasto exitosamente"
+				text: "Se agrego el gasto exitosamente"
 			})
         }
         else{
@@ -107,7 +133,7 @@ const agregarGasto = ({data,data2})=>{
 				text: "Algo salio mal!"
 			})
         }
-        
+      
     }
     const onChange = (e)=>{
         setvalues({

@@ -111,7 +111,7 @@ const gastos = ({data})=>{
                 </VStack>
                 <VStack bg={"gray.300"} width={'full'} height={'container.lg'}>
                     <Button onClick={cerrar}>Cerrar session</Button>
-                    <Heading fontSize='2xl'>Hola Admin como te va</Heading>
+                    <Heading fontSize='2xl'>Bienvenido Administrador</Heading>
                     <Divider orientation='horizontal' my={'10px'} color={'#3C4048'}/>
                     <Divider orientation='horizontal' my={'10px'} color={'#3C4048'}/>
                     <Heading fontSize='xl' textAlign={'center'} py={'10'} color={'#3C4048'} >Resumen Deudas</Heading> 
