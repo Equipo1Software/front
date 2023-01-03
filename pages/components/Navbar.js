@@ -1,18 +1,40 @@
-import { Menu, MenuButton, MenuList, Avatar, AvatarBadge, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider, Button, HamburgerIcon, VStack } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, Avatar, MenuItem, Button,  VStack, Text , Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
+
 const Navbar = () => {
     return (
-        <VStack spacing={4} >
+        <VStack h={'100px'}>
             <div className="navbar">
-                <h1> <b>GRUPO 5 - GASTOS COMUNES</b> </h1>
+                <div className='title'>
+                    <Text> <b>GRUPO 5 - GASTOS COMUNES</b> </Text>
+                </div>
+                <div>
+                    <Breadcrumb>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href={'../user/home'}>Home</BreadcrumbLink>
+                        </BreadcrumbItem>
 
-                <div className='userButton'>
-                    <Menu >
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href={'../resumenes/Stats'}>Registro histórico</BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href={'../user/payment'}>Pagar</BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbItem isCurrentPage>
+                            <BreadcrumbLink href='#'>Perfil</BreadcrumbLink>
+                        </BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
+                <div className='userButton' >
+                    <Menu>
+
                         <MenuButton as={Button} variant='outline' rightIcon={<ChevronDownIcon />} _expanded={{ bg: '#111B54' }} _hover={{ bg: 'gray.400' }}  >
                             <Avatar size={'xs'}>
                             </Avatar> "Nombre de usuario"
