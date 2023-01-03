@@ -20,9 +20,9 @@ const Sidebar = () => {
                 <Divider orientation='horizontal' my={'6'} />
                 <nav>
                     <ul type='disc' style={{ fontFamily: "sans-serif", color: '#ffffff' }}  >
-                        <li><Link color={'#ffffff'}><FontAwesomeIcon icon={faHomeUser} /> Home</Link></li>
-                        <li ><Link color={'#ffffff'} ><FontAwesomeIcon icon={faChartColumn} /> Registro histórico</Link></li>
-                        <li ><Link color={'#ffffff'} ><FontAwesomeIcon icon={faFileInvoiceDollar} /> Pagar</Link></li>
+                        <li><Link color={'#ffffff'} href={'../user/home'} ><FontAwesomeIcon icon={faHomeUser} /> Home</Link></li>
+                        <li ><Link color={'#ffffff'} href={'../resumenes/Stats'}><FontAwesomeIcon icon={faChartColumn}  /> Registro histórico</Link></li>
+                        <li ><Link color={'#ffffff'} href={'../user/payment'} ><FontAwesomeIcon icon={faFileInvoiceDollar} /> Pagar</Link></li>
                         <li > <Link color={'#ffffff'}> <FontAwesomeIcon icon={faUser} /> Perfil </Link></li>
 
                     </ul>
