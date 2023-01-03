@@ -20,7 +20,6 @@ const getUsers = async () => {
     const response = await axios.get(`${process.env.servidor}/users`)
     return response
 }
-
 const getUser = async (id, email) =>{
     const response = await axios.get(`${process.env.servidor}/user/${id}`,{ headers: { cookie: email } })
     return response
