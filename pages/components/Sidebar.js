@@ -9,7 +9,7 @@ import { faChartColumn, faFileInvoiceDollar, faHomeUser, faUser } from '@fortawe
 const Sidebar = () => {
     return (
         
-            <VStack width={'60'} bg={'#111B54'} >
+            <VStack width={'60'} bg={'#3C4048'} >
                 <Divider orientation='horizontal' my={'2'} />
                 <Avatar size={'xl'}>
                     <AvatarBadge boxSize='1.25em' bg='green.500' />
@@ -28,12 +28,6 @@ const Sidebar = () => {
                     </ul>
                 </nav>
             </VStack>
-        
-
-
-
-
-
     )
 }
 

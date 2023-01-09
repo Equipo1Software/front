@@ -15,7 +15,7 @@ import Sidebar from '../components/Sidebar';
 const Stats = () => {
 
     const data = {
-        labels: ['Gas', 'Luz', 'Agua', 'Espacios comunes', 'Seguridad'],
+        labels: ['Gas', 'Luz', 'Agua', 'Mantenimiento', 'Personal'],
         datasets: [{
             label: 'Consumo $',
             backgroundColor: [
@@ -84,8 +84,6 @@ const Stats = () => {
 
                     </Container>
 
-
-                    {/* GRAFICO DE CONSUMO -> FALTA RELLENAR CON LOS DATOS */}
 
                 </div>
             </div>

@@ -6,11 +6,13 @@ import { faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
+
 const Navbar = () => {
     return (
-        <VStack h={'100px'}>
+        <VStack bg={"gray.300"} width={'full'} >
             <div className="navbar">
                 <div className='title'>
+                    
                     <Text> <b>GRUPO 5 - GASTOS COMUNES</b> </Text>
                 </div>
                 <div>
@@ -35,13 +37,13 @@ const Navbar = () => {
                 <div className='userButton' >
                     <Menu>
 
-                        <MenuButton as={Button} variant='outline' rightIcon={<ChevronDownIcon />} _expanded={{ bg: '#111B54' }} _hover={{ bg: 'gray.400' }}  >
+                        <MenuButton as={Button} variant='outline' rightIcon={<ChevronDownIcon />} _expanded={{ bg: '#3C4048' }} _hover={{ bg: 'gray.300' }}  >
                             <Avatar size={'xs'}>
                             </Avatar> "Nombre de usuario"
                         </MenuButton>
-                        <MenuList bg={'#111B54'}>
-                            <MenuItem bg={'#111B54'}> <FontAwesomeIcon icon={faUser} /> Perfil</MenuItem>
-                            <MenuItem bg={'#111B54'}> <FontAwesomeIcon icon={faRightFromBracket} /> Cerrar sesión</MenuItem>
+                        <MenuList >
+                            <MenuItem > <FontAwesomeIcon icon={faUser} /> Perfil</MenuItem>
+                            <MenuItem > <FontAwesomeIcon icon={faRightFromBracket} /> Cerrar sesión</MenuItem>
                         </MenuList>
                     </Menu>
                 </div>

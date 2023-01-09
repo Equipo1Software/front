@@ -13,6 +13,7 @@
     "@chakra-ui/icons": "^2.0.15",
     "@chakra-ui/react": "^2.4.6",
     "@chakra-ui/system": "^2.3.4",
+    "@emotion/is-prop-valid": "^1.2.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -39,6 +40,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.1",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.6.15"
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.6.16"
   }
 }

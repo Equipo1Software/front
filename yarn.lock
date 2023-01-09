@@ -609,7 +609,7 @@
 
 "@chakra-ui/react@^2.4.6":
   version "2.4.6"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/react/-/react-2.4.6.tgz#c3baf75cd1e1c29cd42ae9f732251521df299a66"
+  resolved "https://registry.npmjs.org/@chakra-ui/react/-/react-2.4.6.tgz"
   integrity sha512-uz9QjjxJgf81fXcOWDiVo2rU/lWfThCDKW5UMlYX2OrrHko7OnwZ3r9oMlZFU/vAS71LWhKbjXicJmOwwls42g==
   dependencies:
     "@chakra-ui/accordion" "2.1.5"
@@ -905,7 +905,7 @@
 
 "@emotion/is-prop-valid@^1.2.0":
   version "1.2.0"
-  resolved "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz#7f2d35c97891669f7e276eb71c83376a5dc44c83"
   integrity sha512-3aDpDprjM0AwaxGE09bOPkNxHpBd+kA6jty3RnaEXdweX1DF1U3VQpPYb0g1IStAuK7SVQ1cy+bNBBKp4W3Fjg==
   dependencies:
     "@emotion/memoize" "^0.8.0"
@@ -922,7 +922,7 @@
 
 "@emotion/react@^11.10.5":
   version "11.10.5"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.10.5.tgz#95fff612a5de1efa9c0d535384d3cfa115fe175d"
+  resolved "https://registry.npmjs.org/@emotion/react/-/react-11.10.5.tgz"
   integrity sha512-TZs6235tCJ/7iF6/rvTaOH4oxQg2gMAcdHemjwLKIjKz4rRuYe1HJ2TQJKnAcRAfOUDdU8XoDadCe1rl72iv8A==
   dependencies:
     "@babel/runtime" "^7.18.3"
@@ -952,7 +952,7 @@
 
 "@emotion/styled@^11.10.5":
   version "11.10.5"
-  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-11.10.5.tgz#1fe7bf941b0909802cb826457e362444e7e96a79"
+  resolved "https://registry.npmjs.org/@emotion/styled/-/styled-11.10.5.tgz"
   integrity sha512-8EP6dD7dMkdku2foLoruPCNkRevzdcBaY6q0l0OsbyJK+x8D9HWjX27ARiSIKNF634hY9Zdoedh8bJCiva8yZw==
   dependencies:
     "@babel/runtime" "^7.18.3"
@@ -1061,7 +1061,7 @@
 
 "@motionone/animation@^10.15.1":
   version "10.15.1"
-  resolved "https://registry.yarnpkg.com/@motionone/animation/-/animation-10.15.1.tgz#4a85596c31cbc5100ae8eb8b34c459fb0ccf6807"
+  resolved "https://registry.npmjs.org/@motionone/animation/-/animation-10.15.1.tgz"
   integrity sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ==
   dependencies:
     "@motionone/easing" "^10.15.1"
@@ -1071,7 +1071,7 @@
 
 "@motionone/dom@^10.15.3":
   version "10.15.3"
-  resolved "https://registry.yarnpkg.com/@motionone/dom/-/dom-10.15.3.tgz#afb27270032368a917f1ae8dd87e0069a6a9fe40"
+  resolved "https://registry.npmjs.org/@motionone/dom/-/dom-10.15.3.tgz"
   integrity sha512-FQ7a2zMBXc1UeU8CG9G3yDpst55fbb0+C9A0VGfwOITitBCzigKZnXRgsRSWWR+FW57GSc13eGQxtYB0lKG0Ng==
   dependencies:
     "@motionone/animation" "^10.15.1"
@@ -1091,7 +1091,7 @@
 
 "@motionone/generators@^10.15.1":
   version "10.15.1"
-  resolved "https://registry.yarnpkg.com/@motionone/generators/-/generators-10.15.1.tgz#dc6abb11139d1bafe758a41c134d4c753a9b871c"
+  resolved "https://registry.npmjs.org/@motionone/generators/-/generators-10.15.1.tgz"
   integrity sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ==
   dependencies:
     "@motionone/types" "^10.15.1"
@@ -2122,6 +2122,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-object-assign@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/es6-object-assign/-/es6-object-assign-1.1.0.tgz"
+  integrity sha512-MEl9uirslVwqQU369iHNWZXsI8yaZYGg/D65aOgZkeyFJwHYSxilf7rQzXKI7DdDuBPrBXbfk3sl9hJhmd5AUw==
+
 escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -2474,13 +2479,13 @@ form-data@~2.3.2:
     mime-types "^2.1.12"
 
 framer-motion@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-8.0.2.tgz#212cc4cabfbb90f4eabe5a9e5553ef1b1dc6a598"
-  integrity sha512-xuIiQchVh/cLqUzzu5/8ok4o0nkwYPyIRtkDl8wDvrQUNRhSfRaZu1MMdzN0TjpBtG66oP03PSLO7Qtu1YqPrA==
+  version "8.1.3"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-8.1.3.tgz"
+  integrity sha512-pvlAEwjl4W6EMRp0rvWABCk+YyrlnPMXYzgyhkLSnBq9TdACFNeJBql7E40pMS0ttaWMKfwmH1A/raFCtcMf/A==
   dependencies:
     "@motionone/dom" "^10.15.3"
     hey-listen "^1.0.8"
-    tslib "2.4.0"
+    tslib "^2.4.0"
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
 
@@ -3760,6 +3765,11 @@ promise-inflight@^1.0.1:
   resolved "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   integrity sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==
 
+promise-polyfill@^6.0.2:
+  version "6.1.0"
+  resolved "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-6.1.0.tgz"
+  integrity sha512-g0LWaH0gFsxovsU7R5LrrhHhWAWiHRnh1GPrhXnPgYsDkIqjRYUYSZEsej/wtleDrz5xVSIDbeKfidztp2XHFQ==
+
 promise-retry@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/promise-retry/-/promise-retry-2.0.1.tgz"
@@ -4419,10 +4429,18 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-sweetalert2@^11.6.15:
+sweetalert2@^11.6.16:
   version "11.6.16"
   resolved "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.6.16.tgz"
   integrity sha512-T2FO8LptErsjE4r0WMfiSk4YbeUvPadNaUZ/cADMEOnws000znrf8zFX9S5e/spvzJDyRI5En73WQyDZhGypxQ==
+
+sweetalert@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/sweetalert/-/sweetalert-2.1.2.tgz"
+  integrity sha512-iWx7X4anRBNDa/a+AdTmvAzQtkN1+s4j/JJRWlHpYE8Qimkohs8/XnFcWeYHH2lMA8LRCa5tj2d244If3S/hzA==
+  dependencies:
+    es6-object-assign "^1.1.0"
+    promise-polyfill "^6.0.2"
 
 synckit@^0.8.4:
   version "0.8.4"
